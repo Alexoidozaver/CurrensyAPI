@@ -1,7 +1,7 @@
 from html.parser import HTMLParser
 import urllib.request
 
-from constants import FOUND, NOT_FOUND, currency_url
+from constants import FOUND, NOT_FOUND, CURRENCY_URL
 from Parser.parser_helpers import (
     currency_name,
     currency_name_data,
@@ -46,7 +46,7 @@ class CurrencyParser(HTMLParser):
 
 
 def get_currency():
-    f = urllib.request.urlopen(currency_url)
+    f = urllib.request.urlopen(CURRENCY_URL)
     parser = CurrencyParser()
     html = f.read()
     html = html.decode("utf-8")
