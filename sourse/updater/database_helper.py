@@ -1,7 +1,6 @@
 import pandas as pd
 import datetime
 from app import application as app
-from currency.currency_model import Currency
 
 
 def update_db(currency_course_data):
@@ -29,11 +28,3 @@ def update_postgress():
         app.sqlalchemy,
         if_exists='append'
     )
-
-
-def get_currency_from_postgress():
-    data = app.session.query(Currency).all()
-    conn = app.sqlalchemy.connect()
-    cursor = conn.connection.cursor()
-    cursor.execute("SELECT * FROM currensy WHERE 1")
-    return data
