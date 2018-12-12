@@ -1,19 +1,17 @@
 import sys
 import os
-from pymongo import MongoClient
-
 sys.path.append(
     os.path.join(os.path.dirname(os.path.realpath(__file__)), os.pardir),
 )
+
+from app import application as app  # noqa
 from constants import TEST_CURRENCY  # noqa
 from updater.database_helper import update_db  # noqa
 
 
-def updater_test():
+def test_updater():
     update_db(TEST_CURRENCY)
-    client = MongoClient()
-    db = client.currency
-    posts = db.posts
+    posts = app.posts
     post_list = []
 
     for post in posts.find():

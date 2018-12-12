@@ -2,6 +2,9 @@ FOUND = "found"
 NOT_FOUND = "not found"
 TABLE = "table"
 CURRENCY_URL = "https://kurs.com.ua/"
+SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://postgres:postgres@localhost" \
+                          ":5432/postgres"
+
 TEST_CURRENCY = [
     {
         "name": "Доллар",
@@ -37,3 +40,8 @@ TEST_CURRENCY = [
         "centralbank_change": "-0.00198",
     },
 ]
+
+# postgres settings
+PASSWORD = "postgres"
+USER = "postgres"
+PASSWORD = "postgres"
