@@ -18,3 +18,17 @@ class Currency(Base):
     commercial_change = Column(Integer)
     name = Column(String)
     date = Column(Date)
+
+    def to_str(self):
+        object_dict = dict()
+        object_dict["id"] = self._id
+        object_dict["ask"] = self.ask
+        object_dict["ask_change"] = self.ask_change
+        object_dict["bid"] = self.bid
+        object_dict["bid_change"] = self.bid_change
+        object_dict["centralbank"] = self.centralbank
+        object_dict["centralbank_change"] = self.centralbank_change
+        object_dict["commercial"] = self.commercial
+        object_dict["commercial_change"] = self.commercial_change
+        object_dict["name"] = self.name
+        return object_dict
