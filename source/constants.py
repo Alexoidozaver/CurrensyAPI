@@ -42,6 +42,5 @@ TEST_CURRENCY = [
 ]
 
 # postgres settings
-PASSWORD = "postgres"
 USER = "postgres"
 PASSWORD = "postgres"

@@ -18,13 +18,13 @@ def get_currency_from_db():
     return post_list
 
 
-def update_postgress():
+def update_postgres():
     currency = get_currency_from_db()
-    currense_data_frame = pd.DataFrame.from_records(currency)
-    currense_data_frame["date"] = [datetime.datetime.now().date() for i in
+    currency_data_frame = pd.DataFrame.from_records(currency)
+    currency_data_frame["date"] = [datetime.datetime.now().date() for i in
                                    range(len(currency))
                                    ]
-    currense_data_frame.to_sql(
+    currency_data_frame.to_sql(
         "currency",
         app.sqlalchemy,
         if_exists='append'
